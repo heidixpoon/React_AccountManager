@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property resource="application.properties" />
+    <property name="ROOT_LOG_NAME" value="aristotle-dialog-service" />
+
+    <!-- Standard output -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%-36(%d{HH:mm:ss.SSS} [%thread]) %highlight(%-5level) %cyan(%logger{32}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File output -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_PATH}/${ROOT_LOG_NAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <!-- keep 180 days' worth of history -->
+            <maxHistory>180</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%-5level][%thread][%logger{0}.%M] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.mattel.fuhu.aristotle.taroko" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

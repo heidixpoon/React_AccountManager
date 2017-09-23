@@ -1,0 +1,50 @@
+{
+  "signIn": {
+    "role": "admin",
+    "username": "Stacyyy"
+  },
+  "codeList":[
+    {
+      "id": 1,
+      "code": "AAAAAA",
+      "status": "redeemed",
+      "subEndDate": "12/22/2017",
+      "lastModified": "9/22/2017 15:00"
+    },
+    {
+      "id": 2,
+      "code": "BBBBBB",
+      "status": "unredeemed",
+      "subEndDate": "11/01/2017",
+      "lastModified": "10/02/2017 11:00"
+    },
+    {
+      "id": 3,
+      "code": "CCCCCC",
+      "status": "redeemed",
+      "subEndDate": "12/22/2017",
+      "lastModified": "9/22/2017 15:00"
+    }
+  ],
+  "accounts":[
+    {
+      "id": 1,
+      "account": "heidiPoon@gmail.com",
+      "role": "admin",
+      "created": "12/22/2017"
+    },
+    {
+      "id": 2,
+      "account": "happyPerson@gmail.com",
+      "role": "general user",
+      "created": "12/22/2017"
+    },
+    {
+      "id": 3,
+      "account": "derpyGuy",
+      "role": "admin",
+      "created": "12/22/2017"
+    }
+  ]
+
+}
