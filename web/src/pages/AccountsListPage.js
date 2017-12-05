@@ -3,17 +3,27 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as accountsActions from '../actions/userAccountsActions';
 import AccountListItem from '../components/AccountListItem';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
+
 
 
 class AccountsList extends React.Component {
     constructor(props){
         super(props) 
-        this.handleClickEach=this.handleClickEach.bind(this)         
+        this.handleClickEach=this.handleClickEach.bind(this)   
+        this.handleCreateAccount =this.handleCreateAccount.bind(this)         
+        
     }
 
     componentDidMount(){
         console.log('list renders +++')
         this.props.actions.getAccountsList()
+    }
+
+    handleCreateAccount(){
+        console.log('dude')
     }
 
     handleClickEach(event){
@@ -33,7 +43,9 @@ class AccountsList extends React.Component {
         return (
             <main>
                 <h2>Accounts List</h2>
-                <button>Create New Account</button>  
+                <FloatingActionButton mini={true} onClick={this.handleCreateAccount}>
+                    <ContentAdd />
+                </FloatingActionButton>                
 
                 <br/>
                 <br/>

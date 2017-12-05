@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { Router, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { configureStore } from './store'
+import './styles/main.css'
 import routes from './routes'
 require('viewport-units-buggyfill').init()
 require('dotenv').config()
